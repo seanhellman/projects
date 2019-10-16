@@ -1,0 +1,4 @@
+export const RESET_INVALID_MSG = "RESET_INVALID_MSG";
+export const FAILED_LOGIN = "FAILED_LOGIN";
+export const LOG_OUT = "LOG_OUT";
+export const SUCCESSFUL_LOGIN = "SUCCESSFUL_LOGIN";

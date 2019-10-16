@@ -1,0 +1,4 @@
+export const LOAD_USER = "LOAD_USER";
+export const RESET_USER = "RESET_USER";
+export const ADD_NEW_CHATROOM = "ADD_NEW_CHATROOM";
+export const COMPLETE_ONBOARDING = "COMPLETE_ONBOARDING";
