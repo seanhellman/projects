@@ -1,0 +1,1 @@
+export const MOCK_STUDIES = ["allyship", "other study 1", "other study 2"];

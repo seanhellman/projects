@@ -1,0 +1,138 @@
+# Copyright 2015 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License
+
+# This file configures the polls application . The frontend serves
+# public web traffic.
+
+# The bookshelf frontend replication controller ensures that at least 3
+# instances of the bookshelf app are running on the cluster.
+# For more info about Pods see:
+#   https://cloud.google.com/container-engine/docs/pods/
+# For more info about Deployments:
+#   https://kubernetes.io/docs/user-guide/deployments/
+
+# [START kubernetes_deployment]
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: allyship-frontend
+  labels:
+    app: allyship-frontend
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: allyship-frontend
+    spec:
+      serviceAccountName: allyship-cluster-kube-service-account
+      containers:
+      - name: allyship-frontend-app
+        # Replace  with your project ID or use `make template`
+        image: gcr.io/ubc-sea-projects/allyship-frontend
+        # This setting makes nodes pull the docker image every time before
+        # starting the pod. This is useful when debugging, but should be turned
+        # off in production.
+        imagePullPolicy: Always
+        env:
+            # [START cloudsql_secrets]
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql
+                  key: password
+            # - name: DB_NAME
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: cloudsql
+            #       key: database
+            # [END cloudsql_secrets]
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: HOST_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: LOAD_BALANCER_IP
+              value: 34.95.41.74
+        ports:
+        - containerPort: 8080
+
+      # [START proxy_container]
+      - image: gcr.io/cloudsql-docker/gce-proxy:1.17
+        name: cloud-sql-proxy
+        command: 
+          - "/cloud_sql_proxy"
+          - "-instances=ubc-sea-projects:northamerica-northeast1:allyship-network-db=tcp:3306"
+                  # "-credential_file=/secrets/cloudsql_credentials.json"
+        
+        securityContext:
+          # The default Cloud SQL proxy image runs as the
+          # "nonroot" user and group (uid: 65532) by default.
+          runAsNonRoot: true
+          runAsUser: 1000
+          runAsGroup: 3000
+        # volumeMounts:
+        #   - name: cloudsql-oauth-credentials
+        #     mountPath: /secrets
+        #     readOnly: true
+        #   - name: ssl-certs
+        #     mountPath: /etc/ssl/certs
+        #   - name: cloudsql
+        #     mountPath: /cloudsql
+      # [END proxy_container] 
+      # [START volumes]
+      volumes:
+        - name: cloudsql-oauth-credentials
+          secret:
+            secretName: cloudsql-oauth-credentials
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs
+        - name: cloudsql
+          emptyDir:
+      # [END volumes]        
+# [END kubernetes_deployment]
+
+---
+
+# [START service]
+# The polls service provides a load-balancing proxy over the polls app
+# pods. By specifying the type as a 'LoadBalancer', Container Engine will
+# create an external HTTP load balancer.
+# For more information about Services see:
+#   https://cloud.google.com/container-engine/docs/services/
+# For more information about external HTTP load balancing see:
+#   https://cloud.google.com/container-engine/docs/load-balancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: allyship-frontend
+  labels:
+    app: allyship-frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: allyship-frontend
+# [END service]

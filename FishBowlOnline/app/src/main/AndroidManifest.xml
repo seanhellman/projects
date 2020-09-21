@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nancyseanzoe.fishbowlonline">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_fishbowl_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_fishbowl_app_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SettingsDescriptionActivity"
+            android:parentActivityName=".SettingsActivity"/>
+        <activity android:name=".TimeUpActivity" />
+        <activity
+            android:name=".PlayerObserverActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".AssignTeamsActivity"
+            android:exported="true" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".JoinGameActivity" />
+        <activity
+            android:name=".FinalScoreActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PlayerGuessingActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RoundRule"
+            android:exported="true" />
+        <activity
+            android:name=".PlayerGivingClueActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddWordsActivity"
+            android:exported="true" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

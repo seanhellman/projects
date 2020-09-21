@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">FishBowlOnline</string>
+    <string name="skip">SKIP</string>
+    <string name="correct">CORRECT</string>
+    <string name="current_score">Current Score</string>
+
+    <string name="num_rounds">Number of Rounds</string>
+    <string name="time_round">Time per Person (sec)</string>
+    <string name="num_word_person">Words per Person</string>
+    <string name="num_rounds_des">Set the number of rounds with different rules you will play. Typically Fish Bowl has 3 round, but you can add a fourth with your own rules!</string>
+    <string name="time_round_des">Set the time each team has to guess as many words as possible!</string>
+    <string name="num_word_person_des">Set the number of words each person can add to the Fish Bowl!</string>
+
+
+    <string name="round_1">Round 1</string>
+    <string name="round_2">Round 2</string>
+    <string name="round_3">Round 3</string>
+    <string name="round_4">Round 4</string>
+    <string name="round1_rule">Guess the word without saying the phrase or any part of it</string>
+    <string name="round2_rule">Act out the word without talking or making sounds, like Charades</string>
+    <string name="round3_rule">Say one single word and nothing more</string>
+    <string name="round4_rule">Listen up to your customized rule</string>
+
+    <string name="add_word_hint">add word</string>
+    <string name="keyboard_arrow_right_icon_desc">keyboard arrow right icon</string>
+    <string name="add_words_activity_title">Add your words!</string>
+    <string name="word_label">word %1$d</string>
+    <string name="submit">submit</string>
+
+    <string name="title">Fishbowl Online</string>
+    <string name="new_game">New Game</string>
+    <string name="join_game">Join Game</string>
+    <string name="settings">Settings</string>
+    <string name="next">next</string>
+    <string name="room_code">Room Code:</string>
+    <string name="display_room_code">Room code: %1$s</string>
+    <string name="name">Name:</string>
+    <string name="enter">enter</string>
+    <string name="final_score_title">Final Score!</string>
+    <string name="background_color">background color</string>
+    <string name="play_again">play again</string>
+    <string name="team_1">Team 1</string>
+    <string name="team_2">Team 2</string>
+    <string name="total">Total</string>
+    <string name="assign_team">Assign Teams</string>
+    <string name="word_set">Word Set Type</string>
+    <string name="allow_skips">Allow Skips</string>
+    <string name="next_round">Next Round</string>
+    <string name="default_num_rounds">3</string>
+    <string name="default_time">60</string>
+    <string name="min_rounds">1</string>
+    <string name="max_rounds">4</string>
+    <string name="min_time">30</string>
+    <string name="max_time">90</string>
+    <string name="host_name">Host Name:</string>
+
+    <string-array name="num_words_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+</resources>

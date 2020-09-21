@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Round Progress Bar with Text-->
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color"/>
+        <attr name="roundWidth" format="dimension"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="progressWidth" format="dimension"/>
+
+        <!--The max value of progress-->
+        <attr name="progressMax" format="integer"/>
+        <attr name="progressStartAngle" format="integer"/>
+
+        <!--Text Related-->
+        <attr name="textContent" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="numSize" format="dimension"/>
+
+    </declare-styleable>
+    
+</resources>

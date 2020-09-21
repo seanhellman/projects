@@ -1,0 +1,20 @@
+export const TOGGLE_WAITING_ROOM_STATUS = "TOGGLE_WAITING_ROOM_STATUS";
+export const SET_CHAT_CLIENT = "SET_CHAT_CLIENT";
+export const SET_ACTIVE_CHANNEL = "SET_ACTIVE_CHANNEL";
+export const SET_TIME_SLOT = "SET_TIME_SLOT";
+export const SET_AUTH = "SET_AUTH";
+export const SELECT_USER = "SELECT_USER";
+export const UPDATE_USERS = "UPDATE_USERS";
+export const SET_AUTH_LOADING = "SET_AUTH_LOADING";
+export const SET_AUTH_TOKEN = "SET_AUTH_TOKEN";
+export const SET_AUTH_ROLE = "SET_AUTH_ROLE";
+export const SET_AUTH_USER = "SET_AUTH_USER";
+export const SET_AUTH_INIT = "SET_AUTH_INIT";
+export const SET_AUTH_USER_ID = "SET_AUTH_USER_ID";
+export const SET_PARTICIPANT_INFO = "SET_PARTICIPANT_INFO";
+export const LOGOUT = "LOGOUT";
+
+export const NOT_FETCHED = "NOT_FETCHED";
+export const FETCH_STARTED = "FETCH_STARTED";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_ERROR = "FETCH_ERROR";

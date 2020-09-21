@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "146341992446",
+    "firebase_url": "https://fishbowlonline-59569.firebaseio.com",
+    "project_id": "fishbowlonline-59569",
+    "storage_bucket": "fishbowlonline-59569.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146341992446:android:d366bfc5cf84c6957512af",
+        "android_client_info": {
+          "package_name": "com.nancyseanzoe.fishbowlonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146341992446-ucm94eotl11phl3em6tt9fad3kvn5s98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGqmLKqgo-Wa6IcVZejtHspmYjcnRpRn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146341992446-ucm94eotl11phl3em6tt9fad3kvn5s98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

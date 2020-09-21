@@ -1,0 +1,5 @@
+# FishBowlOnline
+A group project repo for the Mobile Development course at Northeastern University. Fish bowl online is a game that manages a game of fish bowl.
+
+Permalink to feature graphic:
+https://www.norio.be/android-feature-graphic-generator/?config=%7B%22background%22%3A%7B%22color%22%3A%22%236200ee%22%2C%22gradient%22%3A%7B%22type%22%3A%22radial%22%2C%22radius%22%3A%22840%22%2C%22angle%22%3A%22vertical%22%2C%22color%22%3A%22%232d003d%22%7D%7D%2C%22title%22%3A%7B%22text%22%3A%22Fishbowl%20Online%22%2C%22position%22%3A100%2C%22color%22%3A%22%23ffffff%22%2C%22size%22%3A216%2C%22font%22%3A%7B%22family%22%3A%22sans-serif%22%2C%22effect%22%3A%22bold%22%7D%7D%2C%22subtitle%22%3A%7B%22text%22%3A%22Ditch%20the%20bowl%20and%20download%20this%20app!%22%2C%22color%22%3A%22%23c8c8c8%22%2C%22size%22%3A80%2C%22offset%22%3A0%2C%22font%22%3A%7B%22family%22%3A%22sans-serif%22%2C%22effect%22%3A%22normal%22%7D%7D%2C%22image%22%3A%7B%22position%22%3A%220.5%22%2C%22positionX%22%3A%220.5%22%2C%22scale%22%3A%221%22%7D%2C%22size%22%3A%22feature-graphic%22%7D
